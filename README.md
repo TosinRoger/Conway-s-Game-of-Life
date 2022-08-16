@@ -20,51 +20,26 @@ First install package manager brew
 http://brew.sh/
 ```
 
-Download dependencies for library compilation
+Install allegro from brew
 
 ```bash
-sudo port install cmake zlib freetype jpeg libogg physfs libpng flac libtheora +universal
-```
-or 
-```bash
-brew install cmake zlib freetype jpeg libogg physfs libpng flac libtheora
+brew install allegro
 ```
 
-After obtaining the packages, an adjustment is made so that, during compilation, cmake correctly finds the FreeType library
+You will also need to install pkg-config, if it is not already installed.
 
 ```bash
-sudo ln -s /usr/local/opt/freetype/include/freetype2 /usr/local/include/freetype
-```
-
-Download and extract allegro source code
-
-```bash
-https://liballeg.org/download.html
-```
-exctact e.g. in `~/Allegro`
-In terminal open local extract allegro
-`cd ~/Allegro`
-create build folder
-`mkdir build`
-open build folder 
-`cd build`
-
-build, create and install allegro project
-run 
-```bash
-$ cmake ..
-$ make 
-$ sudo make install
+brew install pkg-config
 ```
 
 ## Run
 
-To run the project, navigate to the project root folder in the terminal and run the command
+To run the project, navigate to the project root folder in the terminal and run the command. The project use make compile and run project, a executable called `exec` will be made.
 
 ```bash
-gcc [fileNameWithMain].c -o [nameExec] $(pkg-config –cflags –libs allegro-5) -lallegro -lallegro_main
+make
 ```
-P.S. When compiling it may give some error, but the executable will work.
+
 
 ## Contributing 
 
