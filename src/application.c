@@ -1,6 +1,6 @@
 #include "application.h"
 
-void run() {
+void runApplication() {
    al_init();
    al_install_keyboard();
 
@@ -47,6 +47,8 @@ void run() {
             HEIGHT_SCREEN, 
             al_map_rgb(255, 0, 0)
         );
+
+         executeGame();
 
          al_flip_display();
 

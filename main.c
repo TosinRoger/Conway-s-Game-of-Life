@@ -2,7 +2,7 @@
 
 int main(int argc, char **argv) {
     
-    run();
+    runApplication();
 
     return 0;
 }
