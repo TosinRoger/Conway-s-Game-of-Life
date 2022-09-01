@@ -1,4 +1,4 @@
-#include "app.h"
+#include "application.h"
 
 void run() {
    al_init();

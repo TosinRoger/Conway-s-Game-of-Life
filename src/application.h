@@ -6,8 +6,8 @@
 
 #include <stdio.h>
 
-#ifndef APP_H
-#define APP_H
+#ifndef APPLICATION_H
+#define APPLICATION_H
 
 
 #define TITLE "Conway's game life"
