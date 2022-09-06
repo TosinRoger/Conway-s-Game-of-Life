@@ -1,11 +1,13 @@
 #include "application.h"
 
 void runApplication() {
+    fillRandomMatrix();
+
     al_init();
     al_install_keyboard();
 
     // timer redraw screen in seconds
-    ALLEGRO_TIMER* timer = al_create_timer(1.0);
+    ALLEGRO_TIMER* timer = al_create_timer(0.5);
     ALLEGRO_EVENT_QUEUE* queue = al_create_event_queue();
     ALLEGRO_DISPLAY* disp = al_create_display(WIDTH_SCREEN, HEIGHT_SCREEN);
     ALLEGRO_FONT* font = al_create_builtin_font();
@@ -28,7 +30,7 @@ void runApplication() {
 
         if(redraw && al_is_event_queue_empty(queue)) {
             al_clear_to_color(al_map_rgb(0, 0, 0));
-            al_draw_text(font, al_map_rgb(255, 255, 255), 10, 10, 0, TITLE);
+            al_draw_text(font, WHITE, 10, 10, 0, TITLE);
 
             // draw a line
             al_draw_line(
@@ -36,11 +38,15 @@ void runApplication() {
                 DIVIDER_TITLE_POSITION_Y, 
                 WIDTH_SCREEN, 
                 DIVIDER_TITLE_POSITION_Y, 
-                al_map_rgb(255, 255, 255), 
+                WHITE, 
                 0
             );
 
-            executeGame(0, TABLE_SCREEN_POSITION_Y1, WIDTH_TABLE_SCREEN, HEIGHT_SCREEN);
+            int cycle2 = executeGame(0, TABLE_SCREEN_POSITION_Y1, WIDTH_TABLE_SCREEN, HEIGHT_SCREEN);
+
+            al_draw_text(font, WHITE, 500, 10, 0, "Cycler:");
+            char count = cycle2 + '0';
+            al_draw_text(font, WHITE, 600, 10, 0, &count);
 
             al_flip_display();
 

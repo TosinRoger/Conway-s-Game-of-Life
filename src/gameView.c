@@ -4,15 +4,15 @@ void printMatringGame(int startX, int startY, int endX, int endY, int matrixGame
 	int row, column;
 	int lenght = 5;
 
-	for (row = 0; row < endX; row++) {
-		for (column = 0; column < endY; column++) {
+	for (row = 0; row < MATRIX_GAME_WIDHT; row++) {
+		for (column = 0; column < MATRIX_GAME_HEIGHT; column++) {
 			if (matrixGame[row][column] == 0) {
 				al_draw_filled_rectangle(
 		           (row * lenght), 
 		           startY + (column * lenght),
 		           (row * lenght) + lenght, 
 		           startY + (column * lenght) + lenght,
-		           WHITE
+		           BLACK
 	       		);
 			} else {
 				al_draw_filled_rectangle(
@@ -20,7 +20,7 @@ void printMatringGame(int startX, int startY, int endX, int endY, int matrixGame
 		           startY + (column * lenght),
 		           (row * lenght) + lenght, 
 		           startY + (column * lenght) + lenght,
-		           BLACK
+		           WHITE
 	       		);
 			}
 			

@@ -2,11 +2,10 @@
 #include <allegro5/allegro_primitives.h>
 #include <stdlib.h>
 
+#include "constant.h"
+
 #ifndef GAME_VIEW_H
 #define GAME_VIEW_H
-
-#define MATRIX_GAME_WIDHT 160
-#define MATRIX_GAME_HEIGHT 112
 
 #define WHITE al_map_rgb(255, 255, 255)
 #define BLACK al_map_rgb(0, 0, 0)
