@@ -42,11 +42,12 @@ void runApplication() {
                 0
             );
 
-            int cycle2 = executeGame(0, TABLE_SCREEN_POSITION_Y1, WIDTH_TABLE_SCREEN, HEIGHT_SCREEN);
+            int num = executeGame(0, TABLE_SCREEN_POSITION_Y1, WIDTH_TABLE_SCREEN, HEIGHT_SCREEN);
+            char str[5];
+            sprintf(str, "%d", num);
 
             al_draw_text(font, WHITE, 500, 10, 0, "Cycler:");
-            char count = cycle2 + '0';
-            al_draw_text(font, WHITE, 600, 10, 0, &count);
+            al_draw_text(font, WHITE, 560, 10, 0, str);
 
             al_flip_display();
 
