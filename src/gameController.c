@@ -16,7 +16,7 @@ void fillRandomMatrix() {
 	for (i = 0; i < MATRIX_GAME_WIDHT; i++) {
 		for (j = 0 ; j < MATRIX_GAME_HEIGHT; j++) {
 			int deadOrLive = rand() % 2;
-			int aux = rand() % 64;
+			int aux = rand() % 4;
 			if (aux == 0) {
 				matrixGame[i][j] = deadOrLive;
 			} else {
@@ -36,35 +36,38 @@ void applyRulesLife() {
 		for (column = 0; column < MATRIX_GAME_HEIGHT; column++) {
 			int countNeighbor = 0;
 
-			if (row > 0 && column > 0 && 														matrixGame[row - 1]	[column - 1] 	== 1) {
-				countNeighbor ++;
+			if (row > 0 && column > 0 && matrixGame[row - 1][column - 1] == 1) {
+				countNeighbor++;
 			} 
-			if (row > 0 && 																matrixGame[row - 1]	[column] 		== 1) {
-				countNeighbor ++;
+			if (row > 0 && matrixGame[row - 1][column] == 1) {
+				countNeighbor++;
 			} 
-			if (row > 0 && column < (MATRIX_GAME_WIDHT - 2) && 							matrixGame[row - 1]	[column + 1] 	== 1) {
-				countNeighbor ++;
+			if (row > 0 && column < (MATRIX_GAME_WIDHT - 1) && matrixGame[row - 1][column + 1] == 1) {
+				countNeighbor++;
 			} 
-			if (column > 0 && 															matrixGame[row]		[column - 1] 	== 1) {
-				countNeighbor ++;
+			if (column > 0 && matrixGame[row][column - 1] == 1) {
+				countNeighbor++;
 			} 
-			if (column < (MATRIX_GAME_WIDHT - 2) && 										matrixGame[row]		[column + 1] 	== 1) {
-				countNeighbor ++;
+			if (column < (MATRIX_GAME_WIDHT - 1) && matrixGame[row][column + 1] == 1) {
+				countNeighbor++;
 			} 
-			if (row < (MATRIX_GAME_HEIGHT - 2) && column > 0 && 							matrixGame[row + 1]	[column - 1] 	== 1) {
-				countNeighbor ++;
+			if (row < (MATRIX_GAME_HEIGHT - 1) && column > 0 && matrixGame[row + 1][column - 1] == 1) {
+				countNeighbor++;
 			}
-			 if (row < (MATRIX_GAME_HEIGHT - 2) && 										matrixGame[row + 1]	[column] 		== 1) {
-				countNeighbor ++;
+			 if (row < (MATRIX_GAME_HEIGHT - 1) && matrixGame[row + 1][column] == 1) {
+				countNeighbor++;
 			}
-			 if (row < (MATRIX_GAME_HEIGHT - 2) && column < (MATRIX_GAME_WIDHT - 2) && 	matrixGame[row + 1]	[column + 1] 	== 1) {
-				countNeighbor ++;
+			 if (row < (MATRIX_GAME_HEIGHT - 1) && column < (MATRIX_GAME_WIDHT - 1) && 	matrixGame[row + 1][column + 1] == 1) {
+				countNeighbor++;
 			}
 
-			if (countNeighbor == 2 || countNeighbor == 3) {
+			if (matrixGame[row][column] == 1 && (countNeighbor == 2 || countNeighbor == 3)) {
 				newMatrix[row][column] = 1;
 			} else {
 				newMatrix[row][column] = 0;
+			}
+			if (matrixGame[row][column] == 0 && countNeighbor == 3) {
+				newMatrix[row][column] = 1;	
 			}
 		}
 	}

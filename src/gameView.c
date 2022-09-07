@@ -22,7 +22,6 @@ void printMatringGame(int startX, int startY, int endX, int endY, int matrixGame
 		           WHITE
 	       		);
 			}
-			
 		}
 	}
 

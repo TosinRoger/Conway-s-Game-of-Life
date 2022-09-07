@@ -7,7 +7,7 @@ void runApplication() {
     al_install_keyboard();
 
     // timer redraw screen in seconds
-    ALLEGRO_TIMER* timer = al_create_timer(0.5);
+    ALLEGRO_TIMER* timer = al_create_timer(0.2);
     ALLEGRO_EVENT_QUEUE* queue = al_create_event_queue();
     ALLEGRO_DISPLAY* disp = al_create_display(WIDTH_SCREEN, HEIGHT_SCREEN);
     ALLEGRO_FONT* font = al_create_builtin_font();
