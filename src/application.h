@@ -1,8 +1,6 @@
 #include <allegro5/allegro5.h>
 #include <allegro5/allegro_primitives.h>
 #include <allegro5/allegro_font.h>
-#include <stdbool.h>
-#include <stdio.h>
 
 #include "constant.h"
 #include "gameController.h"
