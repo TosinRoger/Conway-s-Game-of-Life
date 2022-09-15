@@ -13,6 +13,7 @@ int executeGame(int startX, int startY, int endX, int endY) {
 
 void fillRandomMatrix() {
 	int i, j;
+	srand(time(0));
 	for (i = 0; i < MATRIX_GAME_WIDHT; i++) {
 		for (j = 0 ; j < MATRIX_GAME_HEIGHT; j++) {
 			int deadOrLive = rand() % 2;
